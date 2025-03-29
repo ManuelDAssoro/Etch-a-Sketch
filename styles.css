@@ -10,7 +10,7 @@ body{
 h1{
     justify-content: center;
     font-size: 8vw;
-    background-image: url("../image/7658055.webp");
+    background-image: url("./image/7658055.webp");
     -webkit-text-fill-color:transparent;
     -webkit-background-clip: text;
 }
