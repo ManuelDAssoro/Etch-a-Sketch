@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const clearGridButton = document.getElementById("clearGrid");
     const resetGridButton = document.getElementById("resetGrid");
     const gridContainer = document.getElementById("gridContainer");
+    const inputText = document.getElementById("gridInput");
+    const gridSizeDisplay = document.getElementById("gridSizeDisplay");
     createGridButton.addEventListener("click", gridGenerator);
     clearGridButton.addEventListener("click", gridClear);
     resetGridButton.addEventListener("click", gridReset);
@@ -12,7 +14,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 // Clear the color on the grid while keeping the grid size
 function gridClear(){
-    console.log("gridCleared");
     const columns = gridContainer.querySelectorAll(".column");
     columns.forEach(column => {
         column.style.backgroundColor = '';
@@ -21,7 +22,6 @@ function gridClear(){
 
 // Generate the grid based on the input size
 function gridGenerator(){
-    console.log("gridGenerated")
     let gridSize = document.getElementById('gridInput').value
     gridContainer.innerHTML = ""; 
     for(let i = 0; i<gridSize; i++){
@@ -36,7 +36,9 @@ function gridGenerator(){
                 column.style.backgroundColor = "black";
             });
         }
-    }}
+    }
+    gridSizeDisplay.textContent = `${gridSize} x ${gridSize}`;
+}
 
 // Reset the grid to the default colorless 8x8 size 
 function gridReset(){
@@ -53,4 +55,6 @@ function gridReset(){
                 column.style.backgroundColor = "black";
             });
         }
-}}
+}
+    gridSizeDisplay.textContent = `8 x 8`;
+}

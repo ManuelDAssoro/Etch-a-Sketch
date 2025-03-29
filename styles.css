@@ -71,6 +71,11 @@ button{
     border: 1px solid black;
 }
 
+#gridSizeDisplay{
+    margin-top: 5px;
+    
+}
+
 footer{
     margin-top: 100px;
 }
