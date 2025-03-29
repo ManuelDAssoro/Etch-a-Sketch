@@ -44,7 +44,7 @@ function gridGenerator(gridSize){
             column.classList.add("column");
             row.appendChild(column);
             column.addEventListener("mouseover", function() {
-                column.style.backgroundColor = "black";
+                column.style.backgroundColor = "#"+(((1+Math.random())*(1<<24)|0).toString(16)).substr(-6);
             });
         }
     }
