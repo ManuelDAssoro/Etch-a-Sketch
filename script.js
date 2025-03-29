@@ -6,11 +6,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const gridContainer = document.getElementById("gridContainer");
     const inputText = document.getElementById("gridInput");
     const gridSizeDisplay = document.getElementById("gridSizeDisplay");
-    createGridButton.addEventListener("click", gridGenerator);
+    createGridButton.addEventListener("click", userInput);
     clearGridButton.addEventListener("click", gridClear);
     resetGridButton.addEventListener("click", gridReset);
     gridReset();
 });
+
+// Validate user input and call gridGenerator function
+function userInput(){
+    let gridSize = document.getElementById('gridInput').value
+    if(gridSize < 2 || gridSize > 100){
+        alert("Please enter a number between 2 and 100.");
+        return;
+    }
+    else{
+        gridGenerator(gridSize);
+    }
+}
 
 // Clear the color on the grid while keeping the grid size
 function gridClear(){
@@ -20,9 +32,8 @@ function gridClear(){
     });
 }
 
-// Generate the grid based on the input size
-function gridGenerator(){
-    let gridSize = document.getElementById('gridInput').value
+// Generate a grid of the paramet size
+function gridGenerator(gridSize){
     gridContainer.innerHTML = ""; 
     for(let i = 0; i<gridSize; i++){
         const row = document.createElement("div");
