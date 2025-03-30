@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // add event listeners to the buttons
     createGridButton.addEventListener("click", userInput);
     clearGridButton.addEventListener("click", gridClear);
-    resetGridButton.addEventListener("click", gridReset);
+    resetGridButton.addEventListener("click", () => gridGenerator(8));
     // add event listener to the input text(press enter to create grid)
     inputText.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
             userInput();
         }
     });
-    gridReset();
+    // create the default grid
+    gridGenerator(8);
 });
 
 
@@ -43,7 +44,7 @@ function gridClear(){
     });
 }
 
-// Generate a grid of the paramet size
+// Generate a grid of the parameter size
 function gridGenerator(gridSize){
     gridContainer.innerHTML = ""; 
     for(let i = 0; i<gridSize; i++){
@@ -62,21 +63,3 @@ function gridGenerator(gridSize){
     gridSizeDisplay.textContent = `${gridSize} x ${gridSize}`;
 }
 
-// Reset the grid to the default colorless 8x8 size 
-function gridReset(){
-    gridContainer.innerHTML = ""; 
-    for(let i = 0; i<8; i++){
-        const row = document.createElement("div");
-        row.classList.add("row");
-        gridContainer.appendChild(row);
-        for(let j = 0; j<8; j++){
-            const column = document.createElement("div");
-            column.classList.add("column");
-            row.appendChild(column);
-            column.addEventListener("mouseover", function() {
-                column.style.backgroundColor = "#"+(((1+Math.random())*(1<<24)|0).toString(16)).substr(-6);
-            });
-        }
-}
-    gridSizeDisplay.textContent = `8 x 8`;
-}
