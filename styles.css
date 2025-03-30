@@ -25,7 +25,7 @@ h1{
     align-items: center;
 }
 
-form{
+form{   
     margin-top: 10px;
     size: 1vw;
     font-style: bold;
@@ -42,12 +42,12 @@ form{
 button{
     font-weight: 200px;
     color: rgb(27, 27, 27);
-    background-color: #f0f7fd;
+    background-color: beige;
     size: 10vw;
     font-size: 1vw;
     margin: 5px;
     border-radius: 10px;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid rgb(170, 170, 170);
 }
 
 #gridContainer {

@@ -1,16 +1,27 @@
 // Initialize the grid on page load
 document.addEventListener("DOMContentLoaded", (event) => {
+    // get the html elements
     const createGridButton = document.getElementById("createGrid");
     const clearGridButton = document.getElementById("clearGrid");
     const resetGridButton = document.getElementById("resetGrid");
     const gridContainer = document.getElementById("gridContainer");
     const inputText = document.getElementById("gridInput");
     const gridSizeDisplay = document.getElementById("gridSizeDisplay");
+    // add event listeners to the buttons
     createGridButton.addEventListener("click", userInput);
     clearGridButton.addEventListener("click", gridClear);
     resetGridButton.addEventListener("click", gridReset);
+    // add event listener to the input text(press enter to create grid)
+    inputText.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            userInput();
+        }
+    });
     gridReset();
 });
+
+
 
 // Validate user input and call gridGenerator function
 function userInput(){
