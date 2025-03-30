@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
             userInput();
         }
     });
+    // prevents page reload
+    // when pressing enter in the input field
+    inputText.closest("form")?.addEventListener("submit", function(event) {
+        event.preventDefault();
+    });
     // create the default grid
     gridGenerator(8);
 });
