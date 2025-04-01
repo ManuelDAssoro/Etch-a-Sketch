@@ -1,16 +1,16 @@
 // Initialize the grid on page load
 document.addEventListener("DOMContentLoaded", (event) => {
     // get the html elements
-    const createGridButton = document.getElementById("createGrid");
+    const blackBrushButton = document.getElementById("blackBrush");
     const clearGridButton = document.getElementById("clearGrid");
-    const resetGridButton = document.getElementById("resetGrid");
+    const rainbowBrushButton = document.getElementById("rainbowBrush");
     const gridContainer = document.getElementById("gridContainer");
     const inputText = document.getElementById("gridInput");
     const gridSizeDisplay = document.getElementById("gridSizeDisplay");
     // add event listeners to the buttons
-    createGridButton.addEventListener("click", userInput);
+    blackBrushButton.addEventListener("click", blackBrush);
     clearGridButton.addEventListener("click", gridClear);
-    resetGridButton.addEventListener("click", () => gridGenerator(8));
+    rainbowBrushButton.addEventListener("click", rainbowBrush);
     // add event listener to the input text(press enter to create grid)
     inputText.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
@@ -61,10 +61,27 @@ function gridGenerator(gridSize){
             column.classList.add("column");
             row.appendChild(column);
             column.addEventListener("mouseover", function() {
-                column.style.backgroundColor = "#"+(((1+Math.random())*(1<<24)|0).toString(16)).substr(-6);
+                column.style.backgroundColor = "rgb(0, 0, 0)";
             });
         }
     }
     gridSizeDisplay.textContent = `${gridSize} x ${gridSize}`;
 }
 
+function blackBrush(){
+    const columns = gridContainer.querySelectorAll(".column");
+    columns.forEach(column => {
+        column.addEventListener("mouseover", function() {
+            column.style.backgroundColor = "rgb(0, 0, 0)";
+        });
+    });
+}
+
+function rainbowBrush(){
+    const columns = gridContainer.querySelectorAll(".column");
+    columns.forEach(column => {
+        column.addEventListener("mouseover", function() {
+            column.style.backgroundColor = "#"+(((1+Math.random())*(1<<24)|0).toString(16)).substr(-6);
+        });
+    });
+}

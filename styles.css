@@ -55,6 +55,22 @@ button{
     border: 2px solid rgb(170, 170, 170);
 }
 
+#blackBrush{
+    background-color: black;
+    color: white;
+}
+
+#rainbowBrush{
+    background: linear-gradient(in hsl longer hue 45deg, red 0 100%);
+    color: rgb(255, 255, 255);   
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+#clearGrid{
+    background-color: white;
+}
+
 #gridContainer {
     background-color: rgb(245, 245, 245);
     border: 4px solid black;
@@ -73,7 +89,7 @@ button{
 
 .column {
     flex: 1;
-    border: 1px solid black;
+    border: 1px solid rgb(101, 101, 101);
 }
 
 #gridSizeDisplay{
