@@ -1,15 +1,15 @@
 body{
-    margin-top: 75px;
     font-family: "Poppins", sans-serif;
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 100vh;
     flex-direction: column;
     background-color: beige;
 }
 
 h1{
+    margin-top: 1vh;
     justify-content: center;
     font-size: 8vw;
     background-image: url("./image/7658055.webp");
@@ -19,42 +19,47 @@ h1{
 
 #menu{
     margin-top: 10px;
-    font-size:1vw;
+    font-size: 2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 10em;
+    width: 100%;
+    max-width: 500px;
 }
 
 form{   
-    margin-top: 10px;
+    margin-top: 1px;
     size: 1vw;
     font-style: bold;
     font-weight: 200px;
 }
 
 #buttonMenu{
-    margin-top: 20px;
+    margin-top: 1vh;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    height: 3em;
 }
 
 button{
     font-weight: 200px;
     color: rgb(27, 27, 27);
     background-color: beige;
-    size: 10vw;
-    font-size: 1vw;
-    margin: 5px;
+    size: 3em;
+    font-size: 2vh;
+    margin: 1vh;
     border-radius: 10px;
     border: 2px solid rgb(170, 170, 170);
 }
 
 #gridContainer {
     background-color: rgb(245, 245, 245);
-    margin-top: 25px;
     border: 4px solid black;
-    width: 40vh;
+    width: 98%;
+    max-width: 400px;
     height: auto;
     aspect-ratio: 1/1;                  
     display: flex;
@@ -77,7 +82,6 @@ button{
 }
 
 footer{
-    margin-top: 50px;
 }
 
 footer text {
