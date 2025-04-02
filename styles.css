@@ -9,7 +9,6 @@ body{
 }
 
 h1{
-    margin-top: 1vh;
     justify-content: center;
     font-size: 8vw;
     background-image: url("./image/7658055.webp");
@@ -18,12 +17,12 @@ h1{
 }
 
 #menu{
-    margin-top: 1vh;
+    margin-top: 1em;
     font-size: 2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 10em;
+    height: 8em;
     width: 100%;
     max-width: 500px;
 }
@@ -72,7 +71,6 @@ button{
 }
 
 #gridContainer {
-    margin-top: 1vh;
     background-color: rgb(245, 245, 245);
     border: 4px solid black;
     width: 98%;
